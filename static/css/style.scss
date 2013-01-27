@@ -1,0 +1,283 @@
+$topbar-h: 55px;
+$border-l: #DDD;
+$light-text: #888;
+$borderColor: #DDD;
+
+
+$backgroundD: #f5f5f5;
+
+$navWidth: 240px;
+$calendarHeight: 280px;
+$subHeight: 35px;
+
+@mixin border-radius($value) {
+    border-radius: #{$value};
+    -webkit-border-radius: #{$value};
+    -moz-border-radius: #{$value};
+}
+
+@mixin box-shadow($value) {
+    box-shadow: #{$value};
+    -moz-box-shadow: #{$value};
+    -webkit-box-shadow: #{$value};
+}
+
+@mixin background-linear-gradient($direction, $first, $second) {
+    background-image: -moz-linear-gradient($direction, $first, $second);
+    background-image: -ms-linear-gradient($direction, $first, $second);
+    background-image: -webkit-linear-gradient($direction, $first, $second);
+    background-image: -o-linear-gradient($direction, $first, $second);
+    background-image: linear-gradient($direction, $first, $second);
+}
+
+@mixin clear-fix {
+  &:after{
+     content: ".";
+     visibility: hidden;
+     display: block;
+     height: 0;
+     clear: both;
+   }
+}
+
+@mixin fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+a img {
+  border: 0px;
+}
+
+body, html {
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+  top: 100%;
+  width: 100%;
+}
+
+div, input, ul, li {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0px;
+  padding: 0px;
+}
+
+ul, li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+body {
+  color: #333
+}
+
+.topbar{
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: $topbar-h;
+  z-index: 10;
+  background: #FFF;
+  
+  #topbar-border{
+    height: 4px;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    background: url('../img/bottom-border.png');
+  }
+
+  .logo{
+    float: left;
+    height: $topbar-h;
+    font-size: 28px;
+    line-height: 55px;
+    padding-left: 20px;
+    cursor: default;
+    letter-spacing: -1px;
+  }
+
+  .shuttle-search{
+    float: left;
+    height: $topbar-h;
+  }
+}
+
+.page{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: $topbar-h;
+
+  .navigation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $navWidth;
+    bottom: 0;
+    border-right: 1px solid $borderColor;
+    @include box-shadow(0px 4px 5px 0px #cccccc);
+
+    .search {
+      height: $subHeight;
+      display: none;
+
+      .search-bar {
+        width: 100%;
+        height: $subHeight;
+        border: 0;
+      }
+    }
+
+    .section {
+      &:not(:last-child) {border-bottom: 1px solid $borderColor;}
+
+      &> .title {
+        padding: 0 10px;
+        @include background-linear-gradient(top, #fbfbfb, #e6e6e6);
+        border-bottom: 1px solid #ccc;
+        font-size: 13px;
+        text-shadow: 0 1px 0 white;
+        height: $subHeight;
+        line-height: $subHeight;
+      }
+    }
+
+    .calendar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: $calendarHeight;
+      overflow: hidden;
+    }
+
+    .dishes {
+      position: absolute;
+      top: $calendarHeight;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      .dishes {
+        @include fill;
+        top: $subHeight;
+        overflow: auto;
+
+        .dish {
+          padding: 4px 10px;
+          font-size: 11px;
+          border-bottom: 1px dotted $borderColor;
+          cursor: pointer;
+          &:hover {background: $backgroundD;}
+        }
+      }
+    }
+  }
+
+  & > .content {
+    position: absolute;
+    top: 0;
+    left: $navWidth;
+    right: 0;
+    bottom: 0;
+
+    .location {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      height: $subHeight;
+      @include background-linear-gradient(top, #fbfbfb, #e6e6e6);
+      border-bottom: 1px solid #ccc;
+      padding-left: 10px;
+      font-size: 13px;
+      text-shadow: 0 1px 0 white;
+      cursor: default;
+
+      .section {
+        min-width: 100px;
+        float: left;
+        height: $subHeight;
+        line-height: $subHeight;
+
+      }
+    }
+
+    .menu {
+      @include fill;
+      // top: $subHeight;
+      background: #f0f0f0;
+      @include box-shadow(inset 0px 0px 10px #bbb);
+      overflow: auto;
+      padding: 70px;
+
+      &> .facts {
+        background: #fff;
+        border: 1px solid $borderColor;
+        border-radius: 5px;
+        @include box-shadow(0px 2px 3px #bbb);
+        padding: 30px;
+        width: 100%;
+        display: none;
+
+        .name {
+          font-size: 30px;
+          font-weight: bold;
+          padding-bottom: 40px;
+        }
+
+        .ingredients {
+          font-size: 11px;
+          padding-bottom: 20px;
+        }
+      }
+
+      .meals {
+        background: #fff;
+        border: 1px solid $borderColor;
+        border-radius: 5px;
+        @include box-shadow(0px 2px 3px #bbb);
+        padding: 30px;
+        width: 100%;
+        display: none;
+
+        .date {
+          padding-bottom: 40px;
+          font-size: 30px;
+          font-weight: bold;
+        }
+
+        .meal {
+          &:not(:last-child) {margin-bottom: 40px;}
+
+          .title {
+            font-size: 20px;
+            font-weight: bold;
+            padding-bottom: 20px;
+          }
+
+          .dishes {
+
+            .dish {
+              cursor: pointer;
+              &:hover {color: #000;}
+            }
+          }
+        }
+      }
+    }
+  }
+}

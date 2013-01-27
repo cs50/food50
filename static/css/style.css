@@ -1,0 +1,199 @@
+a img {
+  border: 0px; }
+
+body, html {
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+  top: 100%;
+  width: 100%; }
+
+div, input, ul, li {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0px;
+  padding: 0px; }
+
+ul, li {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+body {
+  color: #333333; }
+
+.topbar {
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 55px;
+  z-index: 10;
+  background: #FFF; }
+  .topbar #topbar-border {
+    height: 4px;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    background: url("../img/bottom-border.png"); }
+  .topbar .logo {
+    float: left;
+    height: 55px;
+    font-size: 28px;
+    line-height: 55px;
+    padding-left: 20px;
+    cursor: default;
+    letter-spacing: -1px; }
+  .topbar .shuttle-search {
+    float: left;
+    height: 55px; }
+
+.page {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 55px; }
+  .page .navigation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 240px;
+    bottom: 0;
+    border-right: 1px solid #dddddd;
+    box-shadow: 0px 4px 5px 0px #cccccc;
+    -moz-box-shadow: 0px 4px 5px 0px #cccccc;
+    -webkit-box-shadow: 0px 4px 5px 0px #cccccc; }
+    .page .navigation .search {
+      height: 35px;
+      display: none; }
+      .page .navigation .search .search-bar {
+        width: 100%;
+        height: 35px;
+        border: 0; }
+    .page .navigation .section:not(:last-child) {
+      border-bottom: 1px solid #dddddd; }
+    .page .navigation .section > .title {
+      padding: 0 10px;
+      background-image: -moz-linear-gradient(top, #fbfbfb, #e6e6e6);
+      background-image: -ms-linear-gradient(top, #fbfbfb, #e6e6e6);
+      background-image: -webkit-linear-gradient(top, #fbfbfb, #e6e6e6);
+      background-image: -o-linear-gradient(top, #fbfbfb, #e6e6e6);
+      background-image: linear-gradient(top, #fbfbfb, #e6e6e6);
+      border-bottom: 1px solid #cccccc;
+      font-size: 13px;
+      text-shadow: 0 1px 0 white;
+      height: 35px;
+      line-height: 35px; }
+    .page .navigation .calendar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 280px;
+      overflow: hidden; }
+    .page .navigation .dishes {
+      position: absolute;
+      top: 280px;
+      left: 0;
+      right: 0;
+      bottom: 0; }
+      .page .navigation .dishes .dishes {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 35px;
+        overflow: auto; }
+        .page .navigation .dishes .dishes .dish {
+          padding: 4px 10px;
+          font-size: 11px;
+          border-bottom: 1px dotted #dddddd;
+          cursor: pointer; }
+          .page .navigation .dishes .dishes .dish:hover {
+            background: whitesmoke; }
+  .page > .content {
+    position: absolute;
+    top: 0;
+    left: 240px;
+    right: 0;
+    bottom: 0; }
+    .page > .content .location {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      height: 35px;
+      background-image: -moz-linear-gradient(top, #fbfbfb, #e6e6e6);
+      background-image: -ms-linear-gradient(top, #fbfbfb, #e6e6e6);
+      background-image: -webkit-linear-gradient(top, #fbfbfb, #e6e6e6);
+      background-image: -o-linear-gradient(top, #fbfbfb, #e6e6e6);
+      background-image: linear-gradient(top, #fbfbfb, #e6e6e6);
+      border-bottom: 1px solid #cccccc;
+      padding-left: 10px;
+      font-size: 13px;
+      text-shadow: 0 1px 0 white;
+      cursor: default; }
+      .page > .content .location .section {
+        min-width: 100px;
+        float: left;
+        height: 35px;
+        line-height: 35px; }
+    .page > .content .menu {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #f0f0f0;
+      box-shadow: inset 0px 0px 10px #bbbbbb;
+      -moz-box-shadow: inset 0px 0px 10px #bbbbbb;
+      -webkit-box-shadow: inset 0px 0px 10px #bbbbbb;
+      overflow: auto;
+      padding: 70px; }
+      .page > .content .menu > .facts {
+        background: #fff;
+        border: 1px solid #dddddd;
+        border-radius: 5px;
+        box-shadow: 0px 2px 3px #bbbbbb;
+        -moz-box-shadow: 0px 2px 3px #bbbbbb;
+        -webkit-box-shadow: 0px 2px 3px #bbbbbb;
+        padding: 30px;
+        width: 100%;
+        display: none; }
+        .page > .content .menu > .facts .name {
+          font-size: 30px;
+          font-weight: bold;
+          padding-bottom: 40px; }
+        .page > .content .menu > .facts .ingredients {
+          font-size: 11px;
+          padding-bottom: 20px; }
+      .page > .content .menu .meals {
+        background: #fff;
+        border: 1px solid #dddddd;
+        border-radius: 5px;
+        box-shadow: 0px 2px 3px #bbbbbb;
+        -moz-box-shadow: 0px 2px 3px #bbbbbb;
+        -webkit-box-shadow: 0px 2px 3px #bbbbbb;
+        padding: 30px;
+        width: 100%;
+        display: none; }
+        .page > .content .menu .meals .date {
+          padding-bottom: 40px;
+          font-size: 30px;
+          font-weight: bold; }
+        .page > .content .menu .meals .meal:not(:last-child) {
+          margin-bottom: 40px; }
+        .page > .content .menu .meals .meal .title {
+          font-size: 20px;
+          font-weight: bold;
+          padding-bottom: 20px; }
+        .page > .content .menu .meals .meal .dishes .dish {
+          cursor: pointer; }
+          .page > .content .menu .meals .meal .dishes .dish:hover {
+            color: #000; }
